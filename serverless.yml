@@ -15,7 +15,6 @@ custom:
     webpackConfig: ./webpack/webpack.config.${self:provider.stage}.js
 
 provider:
-  stage: production
   name: aws
   runtime: nodejs10.16.3
   region: ap-southeast-2

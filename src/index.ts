@@ -20,7 +20,6 @@ async function bootstrapServer(): Promise<Server> {
 		nestApp.enableCors();
 		await nestApp.init();
 		cachedServer = createServer(expressApp, undefined, binaryMimeTypes);
-		return cachedServer;
 	}
 	return cachedServer;
 }
