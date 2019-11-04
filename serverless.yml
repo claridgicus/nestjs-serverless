@@ -1,0 +1,32 @@
+service:
+  name: NestJS-Serverless
+
+plugins:
+  - serverless-domain-manager
+  - serverless-webpack
+  - serverless-offline
+  - serverless-dotenv-plugin
+custom:
+  webpack:
+    includeModules:
+      forceExclude:
+        - aws-sdk
+        - typescript
+    webpackConfig: ./webpack/webpack.config.${self:provider.stage}.js
+
+provider:
+  stage: production
+  name: aws
+  runtime: nodejs10.16.3
+  region: ap-southeast-2
+  memorySize: 512
+  timeout: 30
+
+functions:
+  main:
+    handler: src/index.handler
+    events:
+      - http:
+          method: any
+          path: /{proxy+}
+          cors: true

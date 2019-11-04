@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "declaration": false,
+        "removeComments": true,
+        "allowSyntheticDefaultImports": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es6",
+        "sourceMap": true,
+        // "outDir": "./dist",
+        "baseUrl": "./src",
+        "paths": {
+            "@environment": ["./environments/environment"],
+            "@services": ["./app/services/index"],
+            "@snippets": ["./app/snippets/index"],
+            "@layouts": ["./app/layout/index"],
+            "@page": ["./app/pages/index"],
+            "@component": ["./app/components/index"],
+            "@classes": ["./app/classes/index"]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "webpack",
+        // "**/*.spec.ts"
+    ]
+}
